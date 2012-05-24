@@ -1,0 +1,46 @@
+base: &base
+    global:
+        log.screen: False
+        log.access_file: '/Users/jessesmith/Documents/Projects/ImageTaggerBackend/logs/app_running.log'
+        log.error_file: '/Users/jessesmith/Documents/Projects/ImageTaggerBackend/logs/app_error.log'
+        server.socket_host: 0.0.0.0
+        server.socket_port: 8080
+
+development:
+  <<: *base
+  '/images':
+      tools.staticdir.on: True
+      tools.staticdir.dir: '/Users/jessesmith/Documents/Projects/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos'
+  '/reports':
+      tools.staticdir.on: True
+      tools.staticdir.dir: '/Users/jessesmith/Documents/Projects/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos'
+  
+
+test:
+  <<: *base
+  global:
+      log.access_file: '/home/ubuntu/www/ImageTaggerBackend/logs/app_running.log'
+      log.error_file: '/home/ubuntu/www/ImageTaggerBackend/logs/app_error.log'
+      server.socket_host: 0.0.0.0
+      server.socket_port: 8080
+  '/images':
+      tools.staticdir.on: True
+      tools.staticdir.dir: '/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos'
+  '/reports':
+      tools.staticdir.on: True
+      tools.staticdir.dir: '/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos'
+      
+
+production:
+  <<: *base
+  global:
+      log.access_file: '/home/ubuntu/www/ImageTaggerBackend/logs/app_running.log'
+      log.error_file: '/home/ubuntu/www/ImageTaggerBackend/logs/app_error.log'
+      server.socket_host: 0.0.0.0
+      server.socket_port: 8080
+  '/images':
+      tools.staticdir.on: True
+      tools.staticdir.dir: '/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos'
+  '/reports':
+      tools.staticdir.on: True
+      tools.staticdir.dir: '/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos'

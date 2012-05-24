@@ -1,0 +1,8 @@
+*.tmproj
+imagetaggerlib/video_process/processedVideos/*
+imagetaggerlib/video_process/videos/*
+config/environment.yml
+*.pyc
+*~
+.DS_Store
+logs/*

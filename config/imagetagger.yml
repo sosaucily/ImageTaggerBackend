@@ -1,0 +1,44 @@
+# config/crowdflower.yml
+base: &base
+    processed_videos_dir: "/Users/jessesmith/Documents/Projects/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos"
+    new_videos_dir: "/Users/jessesmith/Documents/Projects/ImageTaggerBackend/imagetaggerlib/video_process/videos"
+    configs_dir: "/Users/jessesmith/Documents/Projects/ImageTaggerBackend/config"
+    video_dir_name: "videos"
+    image_dir_name: "images"
+    report_dir_name: "reports"
+    thumb_dir_name: "thumbs"
+    thumb_file_name: "thumb.jpg"
+    video_process_repeat_timer_seconds: "30"
+    callback_URL: "http://76.220.62.124:8080"
+    timed_processes_shutdown_time: "1"
+    video_analysis_complete_timer_seconds: "40"
+    print_timed_process_update: "60"
+    remote_key: "HxmfdCjuqozranEkavx6"
+    log_dir: "/Users/jessesmith/Documents/Projects/ImageTaggerBackend/logs"
+    video_file_directory: "/Users/jessesmith/Documents/Projects/ImageTaggerBackend/imagetaggerlib/video_process/videos/"
+    video_thumbnail_url: "http://localhost:3000"
+  
+development:
+  <<: *base
+
+test:
+  <<: *base
+  callback_URL: "http://107.20.141.244:8080"
+  remote_key: "HxmfdCjuqozranEkavx6"
+  processed_videos_dir: "/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos"
+  new_videos_dir: "/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/videos"
+  log_dir: "/home/ubuntu/www/ImageTaggerBackend/logs"
+  configs_dir: "/home/ubuntu/www/ImageTaggerBackend/config"
+  video_file_directory: "/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/videos/"
+  video_thumbnail_url: "http://107.20.141.244:80"
+
+production:
+  <<: *base
+  callback_URL: "http://www.imagetagger.com:8080"
+  remote_key: "HxmfdCjuqozranEkavx6"
+  processed_videos_dir: "/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/processedVideos"
+  new_videos_dir: "/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/videos"
+  log_dir: "/home/ubuntu/www/ImageTaggerBackend/logs"
+  configs_dir: "/home/ubuntu/www/ImageTaggerBackend/config"
+  video_file_directory: "/home/ubuntu/www/ImageTaggerBackend/imagetaggerlib/video_process/videos/"
+  video_thumbnail_url: "http://www.imagetagger.com:80"
